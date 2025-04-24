@@ -14,7 +14,7 @@ Backend:
 - Sequelize ou Prisma (ORM)
 
 Banco de Dados:
-- MySQL
+- FireBase
 
 ## Estrutura do Projeto
 
