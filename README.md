@@ -1,6 +1,25 @@
 # Nutricare
 
-Nutricare é um sistema de gestão para clínicas de nutrição. A aplicação permite controlar pacientes, agendar consultas, montar planos alimentares personalizados e registrar alimentos com suas respectivas quantidades.
+O Nutricare é uma plataforma web desenvolvida para nutricionistas que desejam gerenciar seus pacientes de forma prática e organizada.
+A ferramenta permite o cadastro de pacientes, agendamento de consultas, controle de evolução e criação de planos alimentares personalizados, tudo em um único sistema centralizado.
+
+## Objetivo do Sistema
+
+Facilitar o trabalho dos nutricionistas, oferecendo um painel completo para:
+	•	Armazenar e organizar informações dos pacientes
+	•	Agendar e controlar consultas
+	•	Registrar avaliações físicas e evolução
+	•	Criar e atualizar planos alimentares individualizados
+
+O sistema busca otimizar o atendimento nutricional, promovendo um acompanhamento mais eficiente e profissional dos pacientes.
+
+Principais Funcionalidades
+	•	Cadastro e gerenciamento de pacientes
+	•	Agendamento e visualização de consultas
+	•	Registro de dados antropométricos (peso, altura, medidas)
+	•	Criação e edição de planos alimentares personalizados
+	•	Dashboard de controle geral com resumos e atalhos
+	•	Área de perfil para atualização de dados do nutricionista
 
 ## Tecnologias Utilizadas
 
@@ -11,95 +30,106 @@ Frontend:
 Backend:
 - Node.js
 - Express.js
-- Sequelize ou Prisma (ORM)
 
 Banco de Dados:
 - FireBase
 
-## Estrutura do Projeto
+1. Tela de Login
+	•	Entrar no sistema.
+	•	(E-mail + Senha)
 
-nutricare/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── middlewares/
-│   │   └── index.js
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/
-│   │   │   ├── pages/
-│   │   │   ├── services/
-│   │   │   └── app.module.ts
-│   └── angular.json
-└── README.md
+⸻
 
-## Funcionalidades
+2. Tela de Cadastro do Nutricionista
+	•	Nome completo
+	•	E-mail
+	•	Senha
+	•	Número do registro profissional (CRN)
+	•	Telefone (opcional)
 
-- Cadastro e gerenciamento de pacientes
-- Agendamento e controle de consultas
-- Criação de planos alimentares personalizados
-- Registro de alimentos e quantidades
-- Histórico de atendimentos por paciente
-- Painel administrativo para gestão dos dados
+⸻
 
-## Instalação
+3. Tela Principal: Dashboard de Controle
 
-### Backend
+Aqui o nutricionista vê tudo num painel só. O que deve ter:
+	•	Resumo rápido:
+	•	Número total de pacientes
+	•	Consultas agendadas para hoje
+	•	Consultas da semana
+	•	Pacientes sem consulta agendada
+	•	Agenda (calendário de consultas próximas)
+	•	Atalhos rápidos:
+	•	Botão “Novo Paciente”
+	•	Botão “Nova Consulta”
+	•	Notificações:
+	•	Alertas de consultas próximas
+	•	Alertas de planos alimentares a revisar
 
-1. Acesse a pasta backend:
-cd backend
+⸻
 
-2. Instale as dependências:
-npm install
+4. Tela de Cadastro de Pacientes
+	•	Nome do paciente
+	•	Data de nascimento
+	•	Sexo
+	•	Peso inicial
+	•	Altura
+	•	Objetivo (ex: emagrecer, ganhar massa, saúde)
+	•	Observações (histórico médico, alergias)
 
-3. Configure o banco de dados:
-Crie um arquivo .env com os seguintes dados:
+⸻
 
-DB_HOST=localhost  
-DB_USER=root  
-DB_PASSWORD=sua_senha  
-DB_NAME=nutricare_db  
-PORT=3000
+5. Tela de Listagem de Pacientes
+	•	Tabela com:
+	•	Nome
+	•	Idade
+	•	Objetivo
+	•	Última consulta
+	•	Próxima consulta
+	•	Botão em cada paciente:
+	•	“Visualizar Detalhes”
+	•	“Nova Consulta”
 
-4. Execute as migrações:
-npx sequelize db:create  
-npx sequelize db:migrate
+⸻
 
-5. Inicie o servidor:
-npm run dev
+6. Tela de Agendamento de Consultas
+	•	Escolher paciente
+	•	Escolher data e hora
+	•	Motivo / Observação da consulta (ex: Retorno, Avaliação inicial)
+	•	Botão “Salvar”
 
-### Frontend
+⸻
 
-1. Acesse a pasta frontend:
-cd frontend
+7. Tela de Consulta
 
-2. Instale as dependências:
-npm install
+(Quando o nutricionista clica em uma consulta marcada)
+	•	Dados do paciente
+	•	Dados da consulta atual
+	•	Área para:
+	•	Preencher peso atual
+	•	Medidas (circunferência, percentual de gordura, etc.)
+	•	Anotações da avaliação
+	•	Criar / Atualizar Plano Alimentar
 
-3. Inicie o projeto:
-ng serve
+⸻
 
-Acesse o sistema em http://localhost:4200
+8. Tela de Planos Alimentares
+	•	Selecionar paciente
+	•	Cadastrar refeições:
+	•	Café da manhã
+	•	Lanche da manhã
+	•	Almoço
+	•	Lanche da tarde
+	•	Jantar
+	•	Ceia
+	•	Lista de alimentos e quantidades
+	•	Observações extras (ex: recomendações de água, suplementos)
 
-## Autenticação
+⸻
 
-Será utilizada autenticação com JWT no backend, e guards no Angular para proteger rotas no frontend.
+9. Tela de Perfil do Nutricionista
+	•	Atualizar dados pessoais
+	•	Alterar senha
 
-## Melhorias Futuras
-
-- Integração com e-mail ou WhatsApp
-- Área do paciente com acesso aos planos alimentares
-- Dashboard com gráficos e métricas
-
-## Contribuições
-
-Contribuições são bem-vindas! Para grandes mudanças, abra uma issue para discutir o que pretende modificar.
-
-## Licença
 
 MIT
 
